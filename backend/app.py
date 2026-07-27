@@ -14,7 +14,9 @@ def create_app():
     api.init_app(app)
 
     from models import User, Settings, Recipe, Ingredient, RecipeIngredient  # noqa: F401
-
+    from resources.auth import RegisterResource, LoginResource
+    api.add_resource(RegisterResource, "/register")
+    api.add_resource(LoginResource, "/login")
     return app
 
 if __name__ == "__main__":
