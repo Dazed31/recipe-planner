@@ -20,11 +20,17 @@ def create_app():
         MeResource,
         AdminPingResource,
     )
+    from resources.recipe import RecipeListResource, RecipeResource
+    from resources.ingredient import IngredientListResource, IngredientResource
 
     api.add_resource(RegisterResource, "/register")
     api.add_resource(LoginResource, "/login")
     api.add_resource(MeResource, "/me")
     api.add_resource(AdminPingResource, "/admin/ping")
+    api.add_resource(RecipeListResource, "/recipes")
+    api.add_resource(RecipeResource, "/recipes/<int:recipe_id>")
+    api.add_resource(IngredientListResource, "/ingredients")
+    api.add_resource(IngredientResource, "/ingredients/<int:ingredient_id>")
     api.init_app(app)
 
     return app
