@@ -7,14 +7,13 @@ def create_app():
     app = Flask(__name__)
     app.config.from_object(Config)
 
-    # Initialize extensions
     db.init_app(app)
     migrate.init_app(app, db)
     jwt.init_app(app)
+    CORS(app)
     api.init_app(app)
 
-    # Enable CORS
-    CORS(app)
+    from models import User, Settings, Recipe, Ingredient, RecipeIngredient  # noqa: F401
 
     return app
 
