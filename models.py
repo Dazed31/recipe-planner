@@ -25,8 +25,8 @@ class Settings(db.Model, SerializerMixin):
 
     id = db.Column(db.Integer, primary_key=True)
     user_id = db.Column(db.Integer, db.ForeignKey('users.id'), nullable=False)
-    dietary_preferences = db.Column(db.String, default="none")
-    unit_systems = db.Column(db.String, default="metric")
+    dietary_preference = db.Column(db.String, default="none")
+    unit_system = db.Column(db.String, default="metric")
 
     user = db.relationship('User', back_populates='settings')
 
