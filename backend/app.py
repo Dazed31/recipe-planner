@@ -14,10 +14,17 @@ def create_app():
     CORS(app)
 
     from models import User, Settings, Recipe, Ingredient, RecipeIngredient  # noqa: F401
-    from resources.auth import RegisterResource, LoginResource
+    from resources.auth import (
+        RegisterResource,
+        LoginResource,
+        MeResource,
+        AdminPingResource,
+    )
 
     api.add_resource(RegisterResource, "/register")
     api.add_resource(LoginResource, "/login")
+    api.add_resource(MeResource, "/me")
+    api.add_resource(AdminPingResource, "/admin/ping")
     api.init_app(app)
 
     return app

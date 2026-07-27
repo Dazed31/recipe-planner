@@ -1,9 +1,10 @@
 from flask import request
 from flask_restful import Resource
 from werkzeug.security import generate_password_hash, check_password_hash
-from flask_jwt_extended import create_access_token
+from flask_jwt_extended import create_access_token, jwt_required, get_jwt_identity, get_jwt
 from extensions import db
 from models import User, Settings
+from resources.decorators import admin_required
 
 
 class RegisterResource(Resource):
@@ -54,3 +55,16 @@ class LoginResource(Resource):
             additional_claims={"role": user.role},
         )
         return {"token": token, "user": user.to_dict()}, 200
+
+
+class MeResource(Resource):
+    @jwt_required()
+    def get(self):
+        user_id = get_jwt_identity()
+        return {"user_id": user_id, "role": get_jwt().get("role")}, 200
+
+
+class AdminPingResource(Resource):
+    @admin_required
+    def get(self):
+        return {"message": "you are an admin, congrats"}, 200
