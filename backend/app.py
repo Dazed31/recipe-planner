@@ -3,6 +3,7 @@ from flask_cors import CORS
 from config import Config
 from extensions import db, migrate, jwt, api
 
+
 def create_app():
     app = Flask(__name__)
     app.config.from_object(Config)
@@ -11,13 +12,16 @@ def create_app():
     migrate.init_app(app, db)
     jwt.init_app(app)
     CORS(app)
-    api.init_app(app)
 
     from models import User, Settings, Recipe, Ingredient, RecipeIngredient  # noqa: F401
     from resources.auth import RegisterResource, LoginResource
+
     api.add_resource(RegisterResource, "/register")
     api.add_resource(LoginResource, "/login")
+    api.init_app(app)
+
     return app
+
 
 if __name__ == "__main__":
     app = create_app()
