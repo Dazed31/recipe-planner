@@ -22,6 +22,11 @@ def create_app():
     )
     from controllers.recipe_controller import RecipeListResource, RecipeResource
     from controllers.ingredient_controller import IngredientListResource, IngredientResource
+    from controllers.query_controller import (
+        RecipesByIngredientResource,
+        MostUsedIngredientsResource,
+        UserRecipeStatsResource,
+    )
 
     api.add_resource(RegisterResource, "/register")
     api.add_resource(LoginResource, "/login")
@@ -31,6 +36,9 @@ def create_app():
     api.add_resource(RecipeResource, "/recipes/<int:recipe_id>")
     api.add_resource(IngredientListResource, "/ingredients")
     api.add_resource(IngredientResource, "/ingredients/<int:ingredient_id>")
+    api.add_resource(RecipesByIngredientResource, "/recipes/search")
+    api.add_resource(MostUsedIngredientsResource, "/ingredients/most-used")
+    api.add_resource(UserRecipeStatsResource, "/users/stats")
     api.init_app(app)
 
     return app
@@ -39,4 +47,3 @@ def create_app():
 if __name__ == "__main__":
     app = create_app()
     app.run(debug=True)
-    
