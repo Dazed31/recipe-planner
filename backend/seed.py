@@ -1,6 +1,6 @@
 from faker import Faker
 from werkzeug.security import generate_password_hash
-from app import create_app
+from main import create_app
 from extensions import db
 from models import User, Settings, Recipe, Ingredient, RecipeIngredient
 
@@ -69,3 +69,4 @@ with app.app_context():
 
     db.session.commit()
     print("Done seeding.")
+    
