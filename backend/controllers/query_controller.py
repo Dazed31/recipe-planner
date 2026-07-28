@@ -96,7 +96,7 @@ class UserRecipeStatsResource(Resource):
                     "user_id": r.id,
                     "username": r.username,
                     "recipe_count": r.recipe_count,
-                    "avg_prep_time": round(r.avg_prep_time, 1) if r.avg_prep_time else None,
+                    "avg_prep_time": round(float(r.avg_prep_time), 1) if r.avg_prep_time is not None else None,
                 }
                 for r in results
             ]
