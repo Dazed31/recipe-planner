@@ -173,3 +173,120 @@
   opacity: 0.4;
   cursor: not-allowed;
 }
+
+.recipe-detail-page,
+.recipe-form-page {
+  max-width: 700px;
+  margin: 0 auto;
+  padding: 24px;
+  background: white;
+  border-radius: 8px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  margin-top: 24px;
+  margin-bottom: 24px;
+}
+
+.recipe-detail-page h2 {
+  color: #993c1d;
+}
+
+.recipe-detail-page h3 {
+  margin-top: 20px;
+  margin-bottom: 8px;
+}
+
+.ingredient-list {
+  padding-left: 20px;
+}
+
+.ingredient-list li {
+  margin-bottom: 4px;
+}
+
+.instructions {
+  line-height: 1.6;
+  color: #333;
+}
+
+.recipe-actions {
+  display: flex;
+  gap: 10px;
+  margin-top: 24px;
+}
+
+.recipe-actions button {
+  padding: 8px 16px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  background: #eee;
+}
+
+.recipe-actions .danger {
+  background: #c0392b;
+  color: white;
+}
+
+.recipe-form-page form {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.recipe-form-page label {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.recipe-form-page input,
+.recipe-form-page textarea,
+.recipe-form-page select {
+  padding: 8px 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 14px;
+  font-family: inherit;
+}
+
+.field-label {
+  font-size: 14px;
+  font-weight: 500;
+  margin-top: 6px;
+}
+
+.ingredient-row {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr auto;
+  gap: 8px;
+  margin-top: 8px;
+}
+
+.remove-row {
+  background: #eee;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.add-row {
+  margin-top: 10px;
+  background: none;
+  border: 1px dashed #ccc;
+  border-radius: 4px;
+  padding: 8px;
+  cursor: pointer;
+  font-size: 13px;
+}
+
+.recipe-form-page > form > button[type="submit"] {
+  margin-top: 10px;
+  padding: 10px;
+  background: #993c1d;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}

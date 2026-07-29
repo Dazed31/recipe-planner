@@ -6,12 +6,17 @@ const API_URL = "http://localhost:5000";
 export function useFetch(path, options = {}) {
   const { token } = useAuth();
   const [data, setData] = useState(null);
-  const [loading, setLoading] = useState(true);
+  const [loading, setLoading] = useState(!options.skip);
   const [error, setError] = useState(null);
 
   const optionsKey = JSON.stringify(options);
 
   const fetchData = useCallback(() => {
+    if (options.skip || !path) {
+      setLoading(false);
+      return;
+    }
+
     setLoading(true);
     setError(null);
 
