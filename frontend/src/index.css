@@ -57,3 +57,119 @@
   color: #c0392b;
   font-size: 13px;
 }
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 14px 24px;
+  background: white;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.navbar-brand {
+  font-weight: 700;
+  font-size: 18px;
+  color: #993c1d;
+  text-decoration: none;
+}
+
+.navbar-links {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  font-size: 14px;
+}
+
+.navbar-links a {
+  color: #1a1a1a;
+  text-decoration: none;
+}
+
+.navbar-user {
+  color: #5f5e5a;
+}
+
+.badge {
+  background: #993c1d;
+  color: white;
+  font-size: 11px;
+  padding: 2px 6px;
+  border-radius: 4px;
+  margin-left: 6px;
+}
+
+.navbar-links button {
+  padding: 6px 12px;
+  background: #eee;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.status-text {
+  text-align: center;
+  margin-top: 60px;
+  color: #5f5e5a;
+}
+
+.recipe-list-page {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 24px;
+}
+
+.recipe-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  gap: 16px;
+  margin-top: 16px;
+}
+
+.recipe-card {
+  display: block;
+  background: white;
+  padding: 16px;
+  border-radius: 8px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  text-decoration: none;
+  color: inherit;
+}
+
+.recipe-card h3 {
+  margin-bottom: 6px;
+  color: #993c1d;
+}
+
+.recipe-meta {
+  font-size: 13px;
+  color: #5f5e5a;
+  margin-bottom: 4px;
+}
+
+.recipe-ingredient-count {
+  font-size: 13px;
+  color: #888;
+}
+
+.pagination {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  margin-top: 24px;
+}
+
+.pagination button {
+  padding: 8px 14px;
+  border: 1px solid #ccc;
+  background: white;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.pagination button:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
